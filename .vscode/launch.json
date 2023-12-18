@@ -1,58 +1,57 @@
 {
-    "configurations": [
-      {
-        "name": "Debug:MainApp",
-        "type": "node",
-        "program": "${workspaceFolder}/src/main.ts",
-        "runtimeArgs": [
-          "-r",
-          "ts-node/register",
-          "-r",
-          "tsconfig-paths/register"
-        ],
-        "console": "integratedTerminal",
-        "request": "launch",
-        "skipFiles": ["<node_internals>/**"],
-        "outFiles": ["${workspaceFolder}/**/*.js", "!**/node_modules/**"]
-      },
-      {
-        "name": "Debug:RemoteApi",
-        "type": "node",
-        "request": "attach",
-        "remoteRoot": "/src",
-        "localRoot": "${workspaceFolder}",
-        "port": 9229,
-        "restart": true,
-        "address": "0.0.0.0",
-        "skipFiles": ["<node_internals>/**"]
-      },
-      {
-        "type": "node",
-        "request": "launch",
-        "name": "Debug:JestFile",
-        "cwd": "${workspaceRoot}",
-        "program": "${workspaceFolder}/node_modules/jest/bin/jest.js",
-        "args": ["${fileBasenameNoExtension}"],
-        "console": "integratedTerminal",
-        "envFile": "${workspaceFolder}/.env.test"
-      },
-      {
-        "type": "node",
-        "request": "launch",
-        "name": "Debug:NodeFile",
-        "runtimeExecutable": "node",
-        "runtimeArgs": [
-          "-r",
-          "ts-node/register",
-          "-r",
-          "tsconfig-paths/register",
-          "--testTimeout= 10000"
-        ],
-        "args": ["${fileDirname}/${fileBasename}"],
-        "cwd": "${workspaceRoot}",
-        "console": "integratedTerminal",
-        "skipFiles": ["<node_internals>/**"],
-        "outFiles": ["${workspaceFolder}/**/*.js", "!**/node_modules/**"]
-      }
-    ]
-  }
+  "configurations": [
+    {
+      "name": "Debug:MainApp",
+      "type": "node",
+      "program": "${workspaceFolder}/src/main.ts",
+      "runtimeArgs": [
+        "-r",
+        "ts-node/register",
+        "-r",
+        "tsconfig-paths/register"
+      ],
+      "console": "integratedTerminal",
+      "request": "launch",
+      "skipFiles": ["<node_internals>/**"],
+      "outFiles": ["${workspaceFolder}/**/*.js", "!**/node_modules/**"]
+    },
+    {
+      "name": "Debug:RemoteApi",
+      "type": "node",
+      "request": "attach",
+      "remoteRoot": "/src",
+      "localRoot": "${workspaceFolder}",
+      "port": 9229,
+      "restart": true,
+      "address": "0.0.0.0",
+      "skipFiles": ["<node_internals>/**"]
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Debug:JestFile",
+      "cwd": "${workspaceRoot}",
+      "program": "${workspaceFolder}/node_modules/jest/bin/jest.js",
+      "args": ["${fileBasenameNoExtension}"],
+      "console": "integratedTerminal",
+      "envFile": "${workspaceFolder}/.env.test"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Debug:NodeFile",
+      "runtimeExecutable": "node",
+      "runtimeArgs": [
+        "-r",
+        "ts-node/register",
+        "-r",
+        "tsconfig-paths/register"
+      ],
+      "args": ["${fileDirname}/${fileBasename}"],
+      "cwd": "${workspaceRoot}",
+      "console": "integratedTerminal",
+      "skipFiles": ["<node_internals>/**"],
+      "outFiles": ["${workspaceFolder}/**/*.js", "!**/node_modules/**"]
+    }
+  ]
+}

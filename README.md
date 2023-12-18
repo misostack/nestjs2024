@@ -42,3 +42,32 @@ npm run start:debug # debug
 7. Guards
 8. Interceptors
 9. Custom Decorators
+
+### Basic
+
+1. Using TypeORM with MySQL
+
+```sh
+npm install --save @nestjs/typeorm typeorm mysql2
+```
+
+```sh
+# generate migration
+npm run typeorm migration:generate -n ./src/database/migrations/create-plan-table
+# create migration
+typeorm migration:create ./src/database/migrations/add-index-for-plan-table
+# show
+npm run typeorm migration:show
+# run
+npm run typeorm migration:run
+# revert
+npm run typeorm migration:revert
+# schema drop
+npm run schema:drop
+# run query
+npm run typeorm query "SELECT VERSION() as 'version'"
+# clear cache
+npm run typeorm cache:clear
+```
+
+2. Create and document your REST API

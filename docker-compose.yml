@@ -1,0 +1,23 @@
+version: '3.4'
+
+services:
+  mysql:
+    image: mysql:8.0.33-oracle
+    container_name: nestjs2024_mysql
+    restart: no
+    command: --default-authentication-plugin=mysql_native_password
+    volumes:
+      - db_data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: 123456
+      MYSQL_USER: nestjs
+      MYSQL_PASSWORD: 123456
+      MYSQL_DATABASE: nestjs2024_mysql
+    ports:
+      - 3306:3306
+    networks:
+      - jsbase
+networks:
+  jsbase:
+volumes:
+  db_data: {}
