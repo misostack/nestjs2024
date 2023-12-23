@@ -63,11 +63,34 @@ npm run typeorm migration:run
 # revert
 npm run typeorm migration:revert
 # schema drop
-npm run schema:drop
+npm run typeorm schema:drop
 # run query
 npm run typeorm query "SELECT VERSION() as 'version'"
 # clear cache
 npm run typeorm cache:clear
 ```
 
-2. Create and document your REST API
+2. Seeding data
+
+```sh
+npm run seed:run
+```
+
+3. Create and document your REST API
+
+## References
+
+### Database naming rules
+
+```ts
+Primary Key - PK_TableName_ColumnName(s)
+ForeignKey - FK_TableName_ColumnName_ReferenceTable_ReferenceColumn
+Unique - UNQ_TableName_ColumnName
+Check - CHK_Table_Name_Condition
+Clustered Index - IDX_Clust_TableName_Columns
+NonClustered Index - IDX_NC_TableName_Columns
+```
+
+### User Agents
+
+- https://stackoverflow.com/questions/654921/how-big-can-a-user-agent-string-get

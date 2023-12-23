@@ -1,7 +1,5 @@
-export enum PlanStatus {
-  Archived = 0,
-  Active = 1,
-}
+import { PlanStatus } from '../constants/plan-constants';
+
 export class PlanDto {
   id: number;
   name: string;

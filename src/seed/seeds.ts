@@ -15,6 +15,8 @@ async function loadSeeds({
   appInstance: INestApplicationContext;
 }) {
   const seeders = await fg.async(patterns, {});
+  console.log({ seeders });
+  console.log('seeders.length', seeders.length);
   for (const path of seeders) {
     const importedSeed = await import(path);
     if (importedSeed.default) {
@@ -38,7 +40,10 @@ async function main() {
   try {
     // execute some operations on this transaction:
     await loadSeeds({
-      patterns: fg.convertPathToPattern(`${__dirname}/seeds/*.seed.ts`),
+      patterns: [
+        fg.convertPathToPattern(`${__dirname}/seeds/*.seed.ts`),
+        fg.convertPathToPattern(`${__dirname}/seeds/*.seed.js`),
+      ],
       appInstance,
     });
     // commit transaction now:
