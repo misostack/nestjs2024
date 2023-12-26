@@ -78,6 +78,8 @@ npm run seed:run
 
 3. Create and document your REST API
 
+- []
+
 ## References
 
 ### Database naming rules
@@ -94,3 +96,7 @@ NonClustered Index - IDX_NC_TableName_Columns
 ### User Agents
 
 - https://stackoverflow.com/questions/654921/how-big-can-a-user-agent-string-get
+
+### Validate data using Pipe and class validator + class transformer with NestJS
+
+- [NestJS Pipes](https://nextjsvietnam.com/post/nestjs-pipes/)
